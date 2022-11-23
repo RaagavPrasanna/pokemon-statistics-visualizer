@@ -1,0 +1,24 @@
+{
+  "name": "520-project-prasanna-catriel-obadia",
+  "version": "1.0.0",
+  "description": "This project uses pokeapi.co to gather, compare and visualise Pokemon stats.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/520-01-F22/section01/projteam01/520-project-prasanna-catriel-obadia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/520-01-F22/section01/projteam01/520-project-prasanna-catriel-obadia/issues"
+  },
+  "homepage": "https://gitlab.com/520-01-F22/section01/projteam01/520-project-prasanna-catriel-obadia#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongodb": "^4.12.1"
+  }
+}

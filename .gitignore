@@ -13,3 +13,4 @@ private_content/
 *.swp
 
 .DS_Store
+.env

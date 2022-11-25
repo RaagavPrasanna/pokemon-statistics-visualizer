@@ -13,3 +13,5 @@ private_content/
 *.swp
 
 .DS_Store
+
+node_modules/

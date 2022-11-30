@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <SearchBar setSelectedPokemonCallback={selectedPokemonCallback}/>
+      <SearchBar selectedPokemonCallback={selectedPokemonCallback}/>
     </>
   )
 }

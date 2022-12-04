@@ -13,4 +13,9 @@ private_content/
 *.swp
 
 .DS_Store
+<<<<<<< HEAD
 .env
+=======
+
+node_modules/
+>>>>>>> d86c1b60cba394e3d82a4783db3ba0efeb40cc3c

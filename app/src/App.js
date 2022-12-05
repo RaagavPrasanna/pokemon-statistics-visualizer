@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import SearchBar from "./SearchBar"
-
+import PokemonStatChart from "./PokemonStatChart"
 
 
 function App() {
@@ -11,9 +11,14 @@ function App() {
     setSelectedPokemon(name)
   })
 
+  const getSelectedPokemon = () => {
+    return selectedPokemon
+  }
+
   return (
     <>
       <SearchBar selectedPokemonCallback={selectedPokemonCallback}/>
+      <PokemonStatChart getSelectedPokemon={getSelectedPokemon}/>
     </>
   )
 }

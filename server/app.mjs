@@ -34,15 +34,6 @@ app.get('/populate', async (req,res) =>{
 
 app.use(cors())
 
-app.get('/pokemonList', (req, res) => {
-  res.json(list);
-})
-
-app.get('/pokemon', async (req, res) =>{
-  let symbol = req.query.name;
-  console.log(symbol)
-  res.json(await fetchPokemonDetails(symbol));
-})
 app.use(function(req, res){
   res.status(404).send('Not Found')
 })

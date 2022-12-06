@@ -32,6 +32,10 @@ class DB {
         instance = null;
     }
 
+    async readAll() {
+        return await instance.collection.find().toArray();
+    }
+
     async readAllNames() {
         const projection = {name: 1}
         const cursor = instance.collection.find().project(projection)
@@ -39,15 +43,24 @@ class DB {
     }
 
     async readOneEntry(name) {
-        return await instance.collection.find({name: {$eq: name}});
+        const cursor = instance.collection.find({name: {$eq: name}})
+        return await cursor.toArray();
     }
 
     async insertOne(entry) {
-        return await instance.collection.insertOne(entry);
+        try {
+            return await instance.collection.insertOne(entry);
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     async insertMany(entries) {
-        return await instance.collection.insertMany(entries);
+        try {
+            return await instance.collection.insertMany(entries);
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 export default DB

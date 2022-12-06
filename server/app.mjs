@@ -5,23 +5,35 @@
 */
 import express from "express";
 import { fetchPokemonList, fetchPokemonDetails } from "./pokemonAPI.mjs";
-import cors from "cors"
-
+import {connectDB, populateDB} from "./utils/seed.mjs";
+import DB from "./db.mjs";
 const port = 5000;
 const app = express();
+const db = new DB();
 let list = await fetchPokemonList()
 app.use(express.static('public'));
+connectDB("PokeDB", "Collection");
+
+app.get('/pokemonList', async (req, res) => {
+    res.json(await db.readAllNames());
+})
+
+app.get('/pokemonDetails', async (req, res) => {
+    res.json(await db.readAll());
+})
+
+app.get('/pokemon/:name', async (req,res) =>{
+    let name = req.params.name
+    console.log(name)
+    res.json(await db.readOneEntry(name));
+})
+app.get('/populate', async (req,res) =>{
+    populateDB()
+    res.send("Populating db");
+})
+
 app.use(cors())
 
-app.get('/pokemonList', (req, res) => {
-  res.json(list);
-})
-
-app.get('/pokemon', async (req, res) =>{
-  let symbol = req.query.name;
-  console.log(symbol)
-  res.json(await fetchPokemonDetails(symbol));
-})
 app.use(function(req, res){
   res.status(404).send('Not Found')
 })

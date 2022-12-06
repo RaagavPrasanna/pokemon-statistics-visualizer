@@ -18,6 +18,8 @@
   },
   "homepage": "https://gitlab.com/520-01-F22/section01/projteam01/520-project-prasanna-catriel-obadia#readme",
   "dependencies": {
-    "create-react-app": "^5.0.1"
+    "dotenv": "16.0.3",
+    "mongodb": "4.12.1",
+    "create-react-app": "5.0.1"
   }
 }

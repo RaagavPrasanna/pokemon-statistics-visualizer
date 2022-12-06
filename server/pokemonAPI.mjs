@@ -41,7 +41,7 @@ async function fetchPokemonDetails(name){
             stats[stat.stat.name] = stat.base_stat
         })
         jsonRefined["base_stats"] = stats
-        console.log(jsonRaw["sprites"]["versions"])
+        // console.log(jsonRaw["sprites"]["versions"])
         jsonRefined["back_sprite"] = jsonRaw["sprites"]["versions"]["generation-i"]["red-blue"].back_transparent
         jsonRefined["front_sprite"] = jsonRaw["sprites"]["versions"]["generation-i"]["red-blue"].front_transparent
 

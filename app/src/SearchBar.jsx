@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 
 export default function SearchBar(props) {
   
-  const [pokeNames, setPokeNames] = useState([])
+  
   const [inputVal, setInputVal] = useState('')
 
   const handleChange = event => {
@@ -19,10 +19,10 @@ export default function SearchBar(props) {
       for(const key in result) {
         tempPokeList.push(result[key])
       }
-      setPokeNames(tempPokeList)
+      props.setPokeNamesCallback(tempPokeList)
     }
 
-    if(pokeNames.length === 0) {
+    if(props.getPokeNamesCallback().length === 0) {
       fetchData()
     }
   }, [])
@@ -32,7 +32,7 @@ export default function SearchBar(props) {
       <div>
         <input required type="search" list="query-list" id="name-query" name="name-query" onChange={handleChange}/>
         <datalist id="query-list">
-          {pokeNames.map((name, key) => {
+          {props.getPokeNamesCallback().map((name, key) => {
             return (
               <option value={name} key={key}/>
             )
@@ -40,7 +40,7 @@ export default function SearchBar(props) {
         </datalist>
         <button id="enter-query" onClick={() => {
 
-          if(pokeNames.includes(inputVal)) {
+          if(props.getPokeNamesCallback().includes(inputVal)) {
             props.selectedPokemonCallback(inputVal)
             console.log("set callback val")
           } else {

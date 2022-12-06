@@ -15,8 +15,8 @@ app.use(express.static('public'));
 connectDB("PokeDB", "Collection")
 //populateDB()
 
-app.get('/pokemonList', (req, res) => {
-    res.json(list);
+app.get('/pokemonList', async (req, res) => {
+    res.json(await db.readAllNames());
 })
 
 app.get('/pokemon/:name', async (req,res) =>{

@@ -19,6 +19,10 @@ app.get('/pokemonList', async (req, res) => {
     res.json(await db.readAllNames());
 })
 
+app.get('/pokemonDetails', async (req, res) => {
+    res.json(await db.readAll());
+})
+
 app.get('/pokemon/:name', async (req,res) =>{
     let name = req.params.name
     console.log(name)

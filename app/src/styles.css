@@ -1,0 +1,12 @@
+.main_div {
+    display: flex;
+    justify-content: space-around;
+}
+body {
+    background-image: './images/background.png'
+}
+
+.search_bar, .stat_selector {
+    border: 2px solid black;
+    border-radius: 4px;
+}

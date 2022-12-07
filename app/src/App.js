@@ -3,6 +3,8 @@ import SearchBar from "./SearchBar"
 import PokemonStatChart from "./PokemonStatChart"
 import PokemonComparisonChart from "./PokemonComparisonChart"
 import StatSelector from "./StatSelector"
+import './styles.css'
+import background from './images/background.png'
 
 function App() {
 
@@ -59,12 +61,16 @@ function App() {
 
 
   return (
-    <>
-      <SearchBar selectedPokemonCallback={selectedPokemonCallback} setPokeNamesCallback={setPokeNamesCallback} getPokeNamesCallback={getPokeNamesCallback}/>
-      <PokemonStatChart getSelectedPokemon={getSelectedPokemon}/>
-      <StatSelector selectedStatCallback={selectedStatCallback}/>
-      <PokemonComparisonChart getSelectedPokemon={getSelectedPokemon} getSelectedStat={getSelectedStat} getPokeNamesCallback={getPokeNamesCallback} getPokeStatsCallback={getPokeStatsCallback}/>
-    </>
+    <div className='main_div' style={{backgroundImage: `url(${background})`, height: `100%`}}>
+      <div>
+        <SearchBar selectedPokemonCallback={selectedPokemonCallback} setPokeNamesCallback={setPokeNamesCallback} getPokeNamesCallback={getPokeNamesCallback}/>
+        <PokemonStatChart getSelectedPokemon={getSelectedPokemon}/>
+      </div> 
+      <div>
+        <StatSelector selectedStatCallback={selectedStatCallback}/>
+        <PokemonComparisonChart getSelectedPokemon={getSelectedPokemon} getSelectedStat={getSelectedStat} getPokeNamesCallback={getPokeNamesCallback} getPokeStatsCallback={getPokeStatsCallback}/>
+      </div>
+    </div>
   )
 }
 

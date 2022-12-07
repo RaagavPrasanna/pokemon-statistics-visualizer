@@ -31,25 +31,24 @@ export default function SearchBar(props) {
   }, [])
 
   return(
-    <>
-      <div>
-        <input required type="search" list="query-list" id="name-query" name="name-query" onChange={handleChange}/>
-        <datalist id="query-list">
-          {props.getPokeNamesCallback().map((name, key) => {
-            return (
-              <option value={name} key={key}/>
-            )
-          })}
-        </datalist>
-        <button id="enter-query" onClick={() => {
+    <div>
+      <br/>
+      <input required type="search" list="query-list" id="name-query" name="name-query" onChange={handleChange} className="search_bar"/>
+      <datalist id="query-list">
+        {props.getPokeNamesCallback().map((name, key) => {
+          return (
+            <option value={name} key={key}/>
+          )
+        })}
+      </datalist>
+      <button id="enter-query" className='search_bar' onClick={() => {
 
-          if(props.getPokeNamesCallback().includes(inputVal)) {
-            props.selectedPokemonCallback(inputVal)
-          } else {
-            alert("Invalid Pokemon!")
-          }
-        }}>GET STATS</button>
-      </div>
-    </>
+        if(props.getPokeNamesCallback().includes(inputVal)) {
+          props.selectedPokemonCallback(inputVal)
+        } else {
+          alert("Invalid Pokemon!")
+        }
+      }}>GET STATS</button>
+    </div>
   )
 }

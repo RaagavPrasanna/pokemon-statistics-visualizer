@@ -17,3 +17,13 @@
   * Raagav will set up initial layouts within React app
   * Aidan will also work on React
   * Michael is taking data from the api and populating the db
+
+  # 2022-12-07 Wednesday 2:44 pm
+  Attendees: Aidan and Raagav
+  Minute taker: Aidan
+  ## Problems
+  * Merge conflicts from compareToAll into Staging
+  * Front-end needs CSS
+  ## Discussion / Work
+  * Raagav will fix the merge conflicts
+  * Aidan will set up the CSS

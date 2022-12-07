@@ -7,10 +7,14 @@ import express from "express";
 import { fetchPokemonList, fetchPokemonDetails } from "./pokemonAPI.mjs";
 import {connectDB, populateDB} from "./utils/seed.mjs";
 import DB from "./db.mjs";
+import cors from "cors"
+
 const port = 5000;
 const app = express();
 const db = new DB();
-let list = await fetchPokemonList()
+
+
+app.use(cors())
 app.use(express.static('public'));
 connectDB("PokeDB", "Collection");
 
@@ -31,8 +35,6 @@ app.get('/populate', async (req,res) =>{
     populateDB()
     res.send("Populating db");
 })
-
-app.use(cors())
 
 app.use(function(req, res){
   res.status(404).send('Not Found')

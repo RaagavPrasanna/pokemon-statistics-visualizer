@@ -9,10 +9,10 @@ export default function PokemonStatChart(props) {
     if(props.getSelectedPokemon() === "") {
     } else {
       const fetchData = async function() {
-        const response = await fetch(`http://localhost:5000/pokemon?name=${props.getSelectedPokemon()}`)
+        const response = await fetch(`http://localhost:5000/pokemon/${props.getSelectedPokemon()}`)
         const result = await response.json()
 
-        setData({...result.base_stats})
+        setData({...result[0].base_stats})
       }
       fetchData()
     }
@@ -28,7 +28,7 @@ export default function PokemonStatChart(props) {
           y: [data.hp, data.attack, data.defense, data['special-attack'], data['special-defense'], data.speed]
         }
         ]}
-        layout={{width: 1000, height:500, title:"Stats"}}
+        layout={{width: 500, height:500, title:"Stats"}}
       />
     </>
   )

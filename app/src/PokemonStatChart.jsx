@@ -28,7 +28,7 @@ export default function PokemonStatChart(props) {
           y: [data.hp, data.attack, data.defense, data['special-attack'], data['special-defense'], data.speed]
         }
         ]}
-        layout={{width: 600, height:600, title:"Stats"}}
+        layout={{width: 500, height:500, title:"Stats"}}
       />
     </div>
   )

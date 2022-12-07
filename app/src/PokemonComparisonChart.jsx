@@ -70,7 +70,7 @@ export default function PokemonComparisonChart(props) {
             name: props.getSelectedPokemon()
           } 
         ]}
-        layout={{width: 600, height: 600, title: 'Compared to all other pokemon', xaxis : {title: {text: 'Pokedex Number'}}, yaxis : {title: {text: `${props.getSelectedStat()}`}}}}
+        layout={{width: 500, height: 500, title: 'Compared to all other pokemon', xaxis : {title: {text: 'Pokedex Number'}}, yaxis : {title: {text: `${props.getSelectedStat()}`}}}}
       />
     </div>
   )

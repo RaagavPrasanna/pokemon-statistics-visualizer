@@ -61,15 +61,18 @@ function App() {
 
 
   return (
-    <div className='main_div' style={{backgroundImage: `url(${background})`, height: `100%`}}>
-      <div>
-        <SearchBar selectedPokemonCallback={selectedPokemonCallback} setPokeNamesCallback={setPokeNamesCallback} getPokeNamesCallback={getPokeNamesCallback}/>
-        <PokemonStatChart getSelectedPokemon={getSelectedPokemon}/>
-      </div> 
-      <div>
-        <StatSelector selectedStatCallback={selectedStatCallback}/>
-        <PokemonComparisonChart getSelectedPokemon={getSelectedPokemon} getSelectedStat={getSelectedStat} getPokeNamesCallback={getPokeNamesCallback} getPokeStatsCallback={getPokeStatsCallback}/>
+    <div style={{backgroundImage: `url(${background})`, height: `100%`}}>
+      <div className='data_div' >
+        <div>
+          <SearchBar selectedPokemonCallback={selectedPokemonCallback} setPokeNamesCallback={setPokeNamesCallback} getPokeNamesCallback={getPokeNamesCallback}/>
+          <PokemonStatChart getSelectedPokemon={getSelectedPokemon}/>
+        </div> 
+        <div>
+          <StatSelector selectedStatCallback={selectedStatCallback}/>
+          <PokemonComparisonChart getSelectedPokemon={getSelectedPokemon} getSelectedStat={getSelectedStat} getPokeNamesCallback={getPokeNamesCallback} getPokeStatsCallback={getPokeStatsCallback}/>
+        </div>
       </div>
+      <p className='instructions'>Select your favorite Pokemon and see how it compares to the rest!</p>
     </div>
   )
 }

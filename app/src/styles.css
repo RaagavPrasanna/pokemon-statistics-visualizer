@@ -1,4 +1,4 @@
-.main_div {
+.data_div {
     display: flex;
     justify-content: space-around;
 }
@@ -9,4 +9,10 @@ body {
 .search_bar, .stat_selector {
     border: 2px solid black;
     border-radius: 4px;
+}
+
+.instructions {
+    text-align: center;
+    font-weight: bold;
+    color: #A09191 ;
 }

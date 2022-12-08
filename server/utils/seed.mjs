@@ -6,7 +6,8 @@ const db = new DB();
 export async function connectDB(dbName, collName) {
   try {
     const db = new DB();
-    await db.connect("Pokedb", "pokemon");
+    // await db.connect("Pokedb", "pokemon");
+    await db.connect(dbName, collName)
   } catch (e) {
     console.error("could not connect, " + e);
     process.exit();

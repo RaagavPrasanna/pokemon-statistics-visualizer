@@ -15,6 +15,8 @@ const db = await new DB();
 
 app.use(cors())
 app.use(express.static('public'));
+app.use(express.static('../app/build'));
+
 await connectDB("Pokedb", "pokemon")
 // await connectDB("pokemondb", "test");
 

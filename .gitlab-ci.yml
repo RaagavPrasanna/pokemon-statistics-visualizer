@@ -46,7 +46,6 @@ lint:
     - staging
   before_script:
     - npm install -g eslint
-  dependencies:
-    - build
+    - npm install -g eslint-plugin-react@latest
   script:
     - eslint --ext .js .

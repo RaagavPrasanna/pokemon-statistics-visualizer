@@ -2,7 +2,6 @@ import {app, db} from "../app.mjs"
 import request from "supertest"
 
 
-
 describe("GET /pokemonList", () => {
   test("Should respond with a list of pokemons names of length 151", async () => {
     const response = await request(app).get('/pokemonList')

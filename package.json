@@ -4,7 +4,9 @@
   "description": "This project uses pokeapi.co to gather, compare and visualise Pokemon stats.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd app && npm install && npm run build && cd ../server && npm install",
+    "start": "cd server && node app.mjs"
   },
   "repository": {
     "type": "git",

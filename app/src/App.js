@@ -17,7 +17,7 @@ function App() {
     const fetchData = async () => {
       let tempData = []
 
-      let response = await fetch('http://localhost:5000/pokemonDetails')
+      let response = await fetch('/pokemonDetails')
       let data = await response.json()
       data.forEach((elem) => {
         let tempObj = {}

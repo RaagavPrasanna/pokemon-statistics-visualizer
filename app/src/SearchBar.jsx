@@ -13,7 +13,7 @@ export default function SearchBar(props) {
 
   useEffect(() => {
     const fetchData = async function() {
-      const response = await fetch('http://localhost:5000/pokemonList')
+      const response = await fetch('/pokemonList')
       const result = await response.json()
       let tempPokeList = []
       // for(const key in result) {

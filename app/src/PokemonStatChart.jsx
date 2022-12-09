@@ -9,7 +9,7 @@ export default function PokemonStatChart(props) {
     if(props.getSelectedPokemon() === "") {
     } else {
       const fetchData = async function() {
-        const response = await fetch(`http://localhost:5000/pokemon/${props.getSelectedPokemon()}`)
+        const response = await fetch(`/pokemon/${props.getSelectedPokemon()}`)
         const result = await response.json()
 
         setData({...result[0].base_stats})

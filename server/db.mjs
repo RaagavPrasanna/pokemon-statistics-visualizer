@@ -5,9 +5,10 @@ import MongoClient from "mongodb";
 
 let instance = null;
 
+// Connects to the Mongo db
 class DB {
   constructor(){
-    //instance is the singleton, defined in outer scope
+    // Instance is the singleton, defined in outer scope
     if (!instance){
       instance = this;
       this.client = new MongoClient.MongoClient(dbUrl);
@@ -17,6 +18,7 @@ class DB {
     return instance;
   }
 
+  // Connect to db collection
   async connect(dbname, collName) {
     if (instance.db){
       return;
@@ -27,26 +29,31 @@ class DB {
     instance.collection = await instance.db.collection(collName)
   }
 
+  // Close connection
   async close() {
     await instance.client.close();
     instance = null;
   }
 
+  // Return all information
   async readAll() {
     return await instance.collection.find().toArray();
   }
 
+  // Return all names
   async readAllNames() {
     const projection = {name: 1}
     const cursor = instance.collection.find().project(projection)
     return await cursor.toArray();
   }
 
+  // Return one entry
   async readOneEntry(name) {
     const cursor = instance.collection.find({name: {$eq: name}})
     return await cursor.toArray();
   }
 
+  // Insert one entry
   async insertOne(entry) {
     try {
       return await instance.collection.insertOne(entry);
@@ -55,6 +62,7 @@ class DB {
     }
   }
 
+  // Insert many entries
   async insertMany(entries) {
     try {
       return await instance.collection.insertMany(entries);

@@ -1,4 +1,9 @@
-export default function StateSelector(props) {
+/**
+ * @author Raagav Prasanna
+ */
+
+// Drop down list component to select a stat to compare
+export default function StatSelector(props) {
 
   const options = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed']
 

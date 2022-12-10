@@ -1,6 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Plot from 'react-plotly.js'
 
+
+/**
+ * @author Raagav Prasanna
+ */
+
+// Component for pokemon comparison chart
 export default function PokemonComparisonChart(props) {
 
   const [allX, setAllX] = useState([])
@@ -9,6 +15,7 @@ export default function PokemonComparisonChart(props) {
   const [chosenX, setChosenX] = useState([])
   const [chosenY, setChosenY] = useState([])
 
+  // Changes the state of the chart if a new pokemon or stat is selected
   useEffect(() => {
     if(props.getSelectedPokemon() === "") {
     } else {
@@ -22,13 +29,9 @@ export default function PokemonComparisonChart(props) {
       let chosenYList = []
       props.getPokeStatsCallback().forEach((elem, ind) => {
         if(ind === selectedIndex) {
-          // setChosenX(ind)
           chosenXList.push(ind + 1)
           chosenYList.push(elem[Object.keys(elem)[0]][props.getSelectedStat()])
-          // setChosenY(elem[props.getSelectedStat()])
         } else {
-          // setAllX(ind)
-          // setAllY(elem[props.getSelectedStat()])
           allXList.push(ind +1)
           allYList.push(elem[Object.keys(elem)[0]][props.getSelectedStat()])
         }
@@ -43,10 +46,6 @@ export default function PokemonComparisonChart(props) {
     }
   }, [props.getSelectedPokemon(), props.getSelectedStat()])
 
-
-  let allTrace = {
-
-  }
 
   return (
     <div>

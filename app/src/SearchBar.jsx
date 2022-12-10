@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
+/**
+ * @author Raagav Prasanna
+ */
 
-
+// Search bar component to select a pokemon
 export default function SearchBar(props) {
   
   
@@ -11,14 +14,12 @@ export default function SearchBar(props) {
     setInputVal(event.target.value)
   }
 
+  // Use effect to fetch the list of pokemon names
   useEffect(() => {
     const fetchData = async function() {
       const response = await fetch('/pokemonList')
       const result = await response.json()
       let tempPokeList = []
-      // for(const key in result) {
-      //   tempPokeList.push(result["name"])
-      // }
       result.forEach((elem) => {
         tempPokeList.push(elem.name)
       })

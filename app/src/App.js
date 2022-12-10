@@ -6,6 +6,11 @@ import StatSelector from "./StatSelector"
 import './styles.css'
 import background from './images/background.png'
 
+/**
+ * @author Raagav Prasanna
+ */
+
+// Main App Component
 function App() {
 
   const [selectedPokemon, setSelectedPokemon] = useState("")
@@ -13,6 +18,7 @@ function App() {
   const [pokeNames, setPokeNames] = useState([])
   const [allPokeStats, setAllPokeStats] = useState([])
 
+  // Use effect to populate stats for all Pokemon
   useEffect(() => {
     const fetchData = async () => {
       let tempData = []
